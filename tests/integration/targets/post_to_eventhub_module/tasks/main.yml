@@ -1,0 +1,5 @@
+---
+- post_to_eventhub:
+    connection_string: example_connection_string
+    event_data:
+      someData: aiognjgpithogatiog
