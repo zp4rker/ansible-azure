@@ -30,3 +30,15 @@ class AzureRMEventHubPostEvent(AzureRMModuleBase):
 
         results = None
         changed = False
+
+        self.results['msg'] = 'This is a message.'
+
+        return self.results
+
+
+def main():
+	AzureRMEventHubPostEvent()
+
+
+if __name__ == '__main__':
+	main()    	

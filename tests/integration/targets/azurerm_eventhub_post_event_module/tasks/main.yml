@@ -1,0 +1,5 @@
+---
+- azurerm_eventhub_post_event:
+    connection_string: example_connection_string
+    event_data:
+      someData: aiognjgpithogatiog
