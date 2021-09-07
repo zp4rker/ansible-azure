@@ -2,6 +2,7 @@ from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
 from ansible.module_utils.basic import AnsibleModule
+from azure.eventhub import EventHubProducerClient, EventData
 
 
 def run_module():
@@ -20,6 +21,13 @@ def run_module():
         argument_spec=module_args,
         supports_check_mode=False
     )
+
+    client = EventHubProducerClient.from_connection_string(module.params['connection_string'])
+    batch = client.create_batch()
+    batch.add(EventData('Test message from Ansible'))
+
+    with client:
+        client.send_batch(batch)
 
     result['msg'] = 'This is a message.'
 
