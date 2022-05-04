@@ -18,3 +18,4 @@ resolvelib==0.5.4
 six==1.16.0
 uamqp==1.4.1
 urllib3==1.26.6
+# Python 3.9.6
